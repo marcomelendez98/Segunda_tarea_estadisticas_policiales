@@ -103,7 +103,7 @@ estadisiticas_meses %>%
 count(fecha_mes) %>%
 ggplot(level = levelorder, (aes(x = reorder(nombre_reordenados, fecha_mes), y = n))) +
 geom_bar(stat = "identity") +
-ggtitle("Cantidad de Delitos segun el mes") +
+ggtitle("Cantidad de delitos por mes") +
 xlab("Mes") +
 ylab("Cantidad") +
 theme_minimal( )
@@ -121,16 +121,16 @@ delitos_género <-
   EstadisticaPolicial %>%
   ggplot(aes(x = Delito, fill = Genero)) +
   geom_bar(position = "fill") +
-  ggtitle("proporción de Delitos por Género") +
+  ggtitle("Proporción de delitos por género") +
   xlab("Género") +
   ylab("Proporción") +
-  labs(fill = "Delito") +
+  labs(fill = "Género") +
   theme_minimal()
 
 ggplotly(delitos_género) 
 
 ```  
-
+  
 ### Gráfico con la cantidad de delitos en San José, Alajuela, Cartago y Heredia  
 
 ```{r Delitos en cuatro cantones, message=FALSE}
